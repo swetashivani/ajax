@@ -1,0 +1,40 @@
+<html>
+<body>
+    <form method="GET">
+      Name &nbsp &nbsp  :
+  <input type="text" size=50 id="userid"name="userid" />
+  <br><br>
+<button type="submit" onclick="getReq()">Get Ajax Request</button>
+<button type="button" onclick="postReq()">Post Ajax Request</button>
+</form>
+<script>
+
+function getReq() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    alert('response is :'+this.responseText );
+    }
+  };
+   target = document.getElementById("userid")
+
+  xhttp.open("GET", "http://localhost:8989/ajax_get", true);
+  xhttp.send(target);
+}
+
+function postReq() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+          alert('response is :'+this.responseText);
+
+    }
+  };
+  xhttp.open("POST", "http://localhost:8989/ajax_post",true);
+  xhttp.send();
+
+}
+</script>
+
+</body>
+</html>
