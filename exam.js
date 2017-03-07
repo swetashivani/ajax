@@ -23,7 +23,7 @@ app.get('/ajax_get', function (req, res) {
 
 app.post('/ajax_post', function (req, res) {
    // Prepare output in JSON format
- var response ='Hello '+req.body.userid;
+ var response ='Hello '+ req.body.userid;
    res.end(JSON.stringify(response));
 });
 
